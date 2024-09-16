@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
+
 <body>
+    <script src="Script.js"></script>
+    <script src="Locations.js"></script>
     <H1>Hello World</H1>
+
+    <p id="location">Allow location access to see your city and state</p>
+
+    <input type="number", id="hourly_rate">
+    <input type="number", id="hours">
+    <button onclick="get_gross_pay()">Calculate Gross</button>
+    <p id="gross_pay"></p>
 </body>
 </html>
