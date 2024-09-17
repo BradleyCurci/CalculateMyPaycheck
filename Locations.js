@@ -17,9 +17,13 @@ function show_position(position) {
         const state = data.address.state;
 
         document.getElementById("location").innerHTML = `City: ${city}\nState: ${state}`
+
+        document.getElementById('state').value = state
+        document.getElementById('city').value = city
     })
     .catch(error => {
         document.getElementById("location").innerHTML = "Unable to retrieve location data"
+        print('unable to retrieve location data')
     });
 }
 
@@ -27,15 +31,19 @@ function show_error(error) {
     switch (error.code) {
         case error.PERMISSION_DENIED:
             document.getElementById("location").innerHTML = "User denied the request for Geolocation.";
+            console.log('User denied the request for Geolocation.');
             break;
         case error.POSITION_UNAVAILABLE:
             document.getElementById("location").innerHTML = "Location information is unavailable.";
+            console.log('Location information is unavailable.');
             break;
         case error.TIMEOUT:
             document.getElementById("location").innerHTML = "The request to get user location timed out.";
+            console.log('The request to get user location timed out.');
             break;
         case error.UNKNOWN_ERROR:
             document.getElementById("location").innerHTML = "An unknown error occurred.";
+            console.log('An unknown error occurred.');
             break;
     }
 }

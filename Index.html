@@ -8,15 +8,29 @@
 </head>
 
 <body>
-    <script src="Script.js"></script>
-    <script src="Locations.js"></script>
-    <H1>Hello World</H1>
+    <H1>Paycheck Calculator</H1>
 
     <p id="location">Allow location access to see your city and state</p>
 
-    <input type="number", id="hourly_rate">
-    <input type="number", id="hours">
-    <button onclick="get_gross_pay()">Calculate Gross</button>
-    <p id="gross_pay"></p>
+    <div class="input_stack">
+        <input type="number", id="hourly_rate", placeholder="Pay Rate">
+        <input type="number", id="hours", placeholder="Hours Worked">
+
+        <div class="pay_period">
+            <h3>Pay Period</h3>
+            <input type="number", id="pay_period_int", placeholder="Weeks Worked">
+        </div>
+
+        <input type="text", id="state", placeholder='State'>
+        <input type="text", id="city", placeholder='City'>
+    </div>
+
+    <p>Gross Pay: $<span id="gross_pay">0.00</span></p>
+    <p id="fed_tax_amount"></p>
+    <p id="pay_after_fed_tax"></p>
+
+    <script src="Locations.js"></script>
+    <script src="Federal_Taxes.js"></script>
+    <script src="Gross.js"></script>
 </body>
 </html>
